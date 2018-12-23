@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideShare</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+	<div id="menu">
+	</div>
+	<div id="map"></div>
+	<div class="other row">
+
+		<div id="user-input-1" class="col-sm-8 col-8">
+		  <div class="inputBox">
+			<input placeholder="SOURCE" type="text" class="source" id="source">
+		  </div>
+		  <div class="inputBox">
+			<input placeholder="DESTINATION" type="text" class="source" id="destination">
+		  </div>
+		</div>
+
+		<div class="col-sm-4 col-4">
+			<button id="getDirection">Search Ride</button>
+		</div>
+
+		<div id="user-input-2" >
+		  <div class="row">
+			<div class="inputBox col-sm-4 col-4">
+				<div id="userID"></div>
+				<div id="getUserID"></div>
+			 </div>
+			<div class="inputBox col-sm-4 col-4">
+				<div id="distance"></div>
+				<div id="getDistance"></div>
+			</div>
+			<div class="inputBox col-sm-1 col-1">
+				<div id="avgRating"></div>
+				<div id="getAvgRating"></div>
+			</div>
+		  </div>
+		  <button class="but" onclick="sendUpdateStatus('Pending Approval')" id="sendRequest">Send Request</button>
+		  <div class="row" id="button-div">
+			<div class="col-sm-6 col-6" id="button-div-1">
+			  <button class="but" onclick="sendUpdateStatus('Approved')" id="approved">Approve</button>
+			</div>
+			<div class="col-sm-6 col-6" id="button-div-2">
+			  <button class="but" onclick="sendUpdateStatus('Declined')" id="declined">Decline</button>
+			</div>
+		  </div>
+		</div>
+
+	</div>
+	<div class="other row">
+	<div>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="scripts/rideShare.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="css/rideShare.css">
+  </body>
+</html>

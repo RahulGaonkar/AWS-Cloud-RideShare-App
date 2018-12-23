@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideShare</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+  </head>
+  <body>
+	<div id="menu">
+	</div>
+	<div id="map"></div>
+	<div class="row other">
+	<div id="user-input-1">
+      <button class="but" id="ride" onClick="getCurrentLocation()">Start Ride</button>
+      <button class="but" id="view" onClick="getCurrentLocation()">View Ride</button>
+    </div>
+    <div id="user-input-2">
+      <h1 align="center" id="header"></h1>
+      <div class="inputBox">
+        <label id="userID"></label>
+        <label id="getUserID"></label>
+      </div>
+    </div>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="scripts/rideStart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="css/rideShare.css">
+  </body>
+</html>

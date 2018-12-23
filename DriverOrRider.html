@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DriverOrRider</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<style>
+		.click{
+			height: 8em;
+			cursor: pointer;
+			background-color: purple;
+			color: white;
+			font-size: x-large;
+			font-style: italic;
+			font-weight: bold;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 2em;
+		}
+
+		#Driver {
+			margin-top: 0%;
+		}
+
+		.sp {
+			margin-top: 7%;
+		}
+
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/rideShare.css">
+  </head>
+	<body>
+		<div id="menu">
+		</div>
+
+		<div class="row sp">
+			<div class="col-sm-3 col-3">
+			</div>
+
+			<div id="Rider" class="click col-sm-6 col-6" onClick="setType('Rider')">
+			  I want to take a Ride
+			</div>
+
+			<div class="col-sm-3 col-3">
+			</div>
+
+		</div>
+		<div class="row sp">
+			<div class="col-sm-3 col-3">
+			</div>
+
+			<div id="Driver" class="click col-sm-6 col-6" onClick=setType("Driver")>
+			  I have an extra space in my vehicle
+			</div>
+
+			<div class="col-sm-3 col-3">
+			</div>
+		</div>
+
+
+		<script>
+		$('#menu').load("menu.html");
+
+
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?#&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
+		}
+
+		if (getUrlVars()["access_token"]) {
+			localStorage.access_token = getUrlVars()["access_token"];
+		}
+
+
+		function setType(type) {
+
+			var cognitoData = {
+			  "access_token": localStorage.access_token
+			}
+			$.ajax({ url : 'https://6c6pq8ga88.execute-api.us-east-1.amazonaws.com/prod',
+				method : 'POST',
+				data: JSON.stringify(cognitoData),
+				dataType: "json",
+				processData: true,
+				success: response => {
+					console.log(response)
+					if (!response) {
+						window.location = 'https://rideshare.auth.us-east-1.amazoncognito.com/login/?response_type=token&client_id=8ebpfkg69mkm1v7od1njh2j30&redirect_uri=https://s3.amazonaws.com/ride-share-app/DriverOrRider.html';
+					} else {
+						localStorage.user_id = response.username;
+						window.location = 'https://s3.amazonaws.com/ride-share-app/index.html';
+					}
+				},
+				fail: error => {
+					console.error(error)
+				}
+			})
+			localStorage.type = type;
+			//window.location = window.location.hostname + '/ride-share-app/index.html';
+		}
+
+		</script>
+	</body>
+</html>
