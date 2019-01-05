@@ -1,2 +1,2 @@
-# Cloud-Project-RideShare
-Cloud-Project-RideShare
+# AWS-Cloud-RideShare-App
+AWS-Cloud-RideShare-App
