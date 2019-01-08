@@ -1,5 +1,5 @@
 # AWS-Cloud-RideShare-App
-A carpooling service, where people can share rides with other people travelling on the same route
+Carpooling Service where people can share rides with other people travelling on the same route
 ## Synopsis
 **Project Idea:**<br>
 1. A carpooling service, where people can share rides with other people travelling on the same route. Thus reducing the traffic on road.<br>
