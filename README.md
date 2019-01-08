@@ -1,5 +1,5 @@
 # AWS-Cloud-RideShare-App
-AWS-Cloud-RideShare-App
+Carpooling Service that both Drivers and Riders can use to Transit from one place to the other
 ## Synopsis
 ## More
 [Project Report](RideShare_App_Report.pdf)<br>
