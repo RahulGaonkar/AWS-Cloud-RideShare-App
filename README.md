@@ -5,4 +5,4 @@ AWS-Cloud-RideShare-App
 
 [Project Presentation](RideShare_ App_Presentation.pdf)
 
-![Demo](https://youtu.be/NN6HuxzuozU)
+[Demo](https://youtu.be/NN6HuxzuozU)
