@@ -9,8 +9,8 @@ Carpooling Service where people can share rides with other people travelling on 
 ![Architecture Diagram](RideShare_Architecture_Diagram.png)
 
 **Additional API Used:**<br>
-1. *Google Geocoding API:* Used to map physical address to latitude and longitude on the map
-2. *Google Maps Driving Direction API:* Calculates directions between locations
+1. ***Google Geocoding API:*** Used to map physical address to latitude and longitude on the map
+2. ***Google Maps Driving Direction API:*** Calculates directions between locations
 
 **Project Deliverables:**<br>
 1. A sign-up and log-in page  with email verification
